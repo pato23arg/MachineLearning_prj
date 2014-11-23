@@ -85,7 +85,7 @@ testing2 <- ds2[-inTrain,]
 
 We decided to use Random Forest with cross validation
 
-```{r, echo=TRUE}
+```{r}
 
 ## Apply Random Forest with cross validation
 
@@ -97,7 +97,7 @@ print(modelRF)
 
 Since we've got an accuracy level of 0.98, which is pretty good we decided to move forward and test it with our first testing set:
 
-```{r, echo=TRUE}
+```{r}
 pred1 <- predict(modelRF, newdata=testing1)
 print(confusionMatrix(pred1, testing1$classe), digits=2)
 ```
@@ -110,7 +110,7 @@ Out of sample error (Random Forest + Cross Validation) = 1 - 0.98 = 0.02
 
 After building our machine learning block, we got to apply it to our testing set so we can predict outcomes and test it against J. Leek data set:
 
-```{r, echo=TRUE}
+```{r}
 ## test with the real testing set
 
 pred2 <- predict(modelRF, newdata=clean_testing)
